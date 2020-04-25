@@ -1,0 +1,60 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Save Data in PDF</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="Styles/SSC.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+
+       <%-- Head Title--%>
+        <div id="header">
+          <div class="left" align="center">
+              <asp:HyperLink runat="server" ID="lnkHome" NavigateUrl="~/Home.aspx" >Data save in PDF Forms</asp:HyperLink>
+          </div>
+          
+          <div class="subheader" align="center">
+            <em>Now we can save our record in PDF in our folders in computer</em>
+          </div>
+        </div>
+
+        <%--Left Sidebar--%>
+        <div id="sidebar">
+          <div>
+              <ul>
+                <li><a href="Home.aspx">Home</a></li>
+                <li><a href="Forms.aspx">PDF Forms </a></li>
+                <li><a href="CreateTest.aspx">Create Form Test</a></li>
+              </ul>
+          </div>
+        </div>
+
+        <!-- ======== Main Content ======== -->
+        <div id="main">
+            <asp:ContentPlaceHolder id="MainPosition" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        
+        <!-- ======== Footer ======== -->
+
+        <div id="footer" align="center">
+            ASP.NET application <br />
+            <%=DateTime.Now.ToShortDateString()%>
+
+        </div>
+
+        <br />       
+        
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>
